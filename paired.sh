@@ -1,8 +1,14 @@
 #!/bin/bash
 
+# Check if the correct number of arguments is provided
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 <path_of_read_counts_with_paths_bases_coverage.txt> <path_of_paired_read_count_with_paths_bases_coverage.txt>"
+    exit 1
+fi
+
 # Input and output file paths
-input_file="/home/arpit/data_after_2nd_script_human_scrubber/Human_Contam_remove_fastq_files/read_counts_with_paths_bases_coverage.txt"
-output_file="/home/arpit/data_after_2nd_script_human_scrubber/Human_Contam_remove_fastq_files/new_coverage_file.txt"
+input_file="$1"
+output_file="$2"
 
 # Temporary associative array to store combined coverage by path
 declare -A coverage_map
@@ -31,5 +37,3 @@ for path in "${!coverage_map[@]}"; do
 done
 
 echo "Processing complete. Results saved to $output_file."
-
-
