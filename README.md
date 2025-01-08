@@ -5,6 +5,7 @@ Bash Script to find Reads, Bases and Coverage from FASTQ file
 
 ## Usage
 
+For Single end read FASTQ files 
 To run the script, use the following command:
 
 ```bash
