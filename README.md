@@ -19,6 +19,6 @@ bash main.sh <input_directory_path> <output_directory_path> <bases_in_your_regio
 After main.sh is run, and once you get <read_counts_with_paths_bases_coverage.txt> file, run the following script:
 
 
-```bash
+
 bash paired.sh <path of read_counts_with_paths_bases_coverage.txt> <path of paired_read_count_with_paths_bases_coverage.txt>
 
