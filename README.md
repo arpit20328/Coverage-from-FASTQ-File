@@ -13,9 +13,10 @@ To run the script, use the following command:
 ```bash
 bash main.sh <input_directory_path> <output_directory_path> <bases_in_your_region_of_interest>
 
+
 ### For Paired End Read FASTQ Files
 
-After main.sh is run, and once you get <read_counts_with_paths_bases_coverage.txt> file, run the following script
+After main.sh is run, and once you get <read_counts_with_paths_bases_coverage.txt> file, run the following script:
 
 
 ```bash
