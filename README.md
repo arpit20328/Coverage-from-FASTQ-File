@@ -11,8 +11,7 @@ If your FASTQ files are in format .fastq.gz   gunzip it using pigz -d -p <no_of_
 To run the script, use the following command:
 
 ```bash
-bash main.sh <input_directory_path> <output_directory_path> 
-Enter your region of interest bases: <Enter of region of interest bases>
+bash main.sh <input_directory_path> <output_directory_path> <Enter of region of interest bases>
 
 ### For Paired End Read FASTQ Files
 
