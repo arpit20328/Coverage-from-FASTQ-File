@@ -1,14 +1,15 @@
 #!/bin/bash
 
 # Check if the correct number of arguments is provided
-if [ "$#" -ne 2 ]; then
-    echo "Usage: $0 <input_directory> <output_directory>"
+if [ "$#" -ne 3 ]; then
+    echo "Usage: $0 <input_directory> <output_directory> <region_of_interest_bases>"
     exit 1
 fi
 
-# Define the input and output directories
+# Define the input directory, output directory, and region of interest bases
 INPUT_DIR="$1"
 OUTPUT_DIR="$2"
+ROI_BASES="$3"
 
 # Create the output directory if it does not exist
 mkdir -p "$OUTPUT_DIR"
@@ -18,9 +19,6 @@ OUTPUT_FILE="$OUTPUT_DIR/read_counts_with_paths_bases_coverage.txt"
 
 # Initialize the output file
 echo -e "File_Path\tRead_Count\tBase_Count\tCoverage" > $OUTPUT_FILE
-
-# Prompt the user to enter their region of interest bases
-read -p "Enter your region of interest bases: " ROI_BASES
 
 # Check if the ROI_BASES is a valid number
 if ! [[ "$ROI_BASES" =~ ^[0-9]+$ ]]; then
@@ -45,7 +43,6 @@ find "$INPUT_DIR" -type f \( -name "*.fastq.gz" -o -name "*.fastq" \) | while re
 
     # Calculate coverage (bases divided by user-defined region of interest bases)
     coverage=$(awk "BEGIN {printf \"%.6f\", $bases / $ROI_BASES}")
-
 
     # Write the full file path, read count, base count, and coverage to the output file
     echo -e "$file\t$reads\t$bases\t$coverage" >> $OUTPUT_FILE
