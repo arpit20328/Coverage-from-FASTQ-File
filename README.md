@@ -11,8 +11,8 @@ It works for both Illumina Short Read FASTQ or Pac-Bio or ONT Long Read FASTQ fi
 To run the script, use the following command:
 
 ```bash
-bash main.sh <input_directory_path> <output_directory_path> <bases_in_your_region_of_interest>
-
+bash main.sh <input_directory_path> <output_directory_path> 
+Enter your region of interest bases: <Enter of region of interest bases>
 
 ### For Paired End Read FASTQ Files
 
