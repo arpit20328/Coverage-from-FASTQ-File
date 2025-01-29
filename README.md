@@ -1,4 +1,4 @@
-# Coverage_from_FASTQ
+# Coverage Calculator from FASTQ
 
 Bash Script to find Reads, Bases, and Coverage from FASTQ files.
 
